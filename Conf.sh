@@ -1,6 +1,22 @@
 #!/bin/bash
 CONF_FILE="chroot.conf"
 
+# Force a clean black-and-white theme (No blue background, no shadows)
+export NEWT_COLORS='
+  root=,black
+  window=,black
+  shadow=,black
+  border=white,black
+  title=white,black
+  textbox=white,black
+  button=black,white
+  actbutton=white,black
+  listbox=white,black
+  actlistbox=black,white
+  checkbox=white,black
+  actcheckbox=black,white
+'
+
 # Helper function to catch Cancel / ESC / q
 check_exit() {
     if [ $1 -ne 0 ]; then
